@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/regCSS.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body> 
+
+    <div class = font>
+
+        <h1>Reģistrācija</h1>
+            <form action="/registration" method="POST" th:object="${student}">
+                
+            <label for="name">Name: </label>
+            <input required name = "name" class="registration" type="text" id = "name" placeholder="Ievadiet savu vārdu" minlength="4" maxlength="30" th:field="*{name}">
+            <span
+                class = "error"
+                th:errors = "*{name}"
+                th:if = "${#fields.hasErrors('name')}">
+            </span>
+
+            <label for="surname">Surname: </label>
+            <input required class="registration" type="text" id = surname placeholder="Ievadiet savu uzvārdu" minlength="4" maxlength="30" th:field="*{surname}">
+            <span
+                class = "error"
+                th:errors = "*{surname}"
+                th:if = "${#fields.hasErrors('surname')}">
+        </span>
+
+            <label for="email">Email: </label>
+            <input required class="registration" type="email" id = "email" placeholder="Ievadiet savu e-pastu" th:field="*{email}">
+            <span
+                class = "error"
+                th:errors = "*{email}"
+                th:if = "${#fields.hasErrors('email')}">
+            </span>
+            <span th:if="${emailExists}" style="color: red;">Email already exists</span>
+
+            <label for="password">Enter your password</label>
+            <input required class="registration" type="password" id="password" placeholder="Ievadiet savu paroli" th:field="*{password}">
+            <span
+                class = "error"
+                th:errors = "*{password}"
+                th:if = "${#fields.hasErrors('password')}">
+            </span>
+
+            <label for="day">Day</label>
+            <input required class="registration" type="date" id="day" placeholder="Ievadiet savu dzimšanas gadu" th:field="*{day}" max="">
+            <span
+                class = "error"
+                th:errors = "*{day}"
+                th:if = "${#fields.hasErrors('day')}">
+            </span>
+            <script>
+                var today = new Date();
+                var dd = String(today.getDate()).padStart(2, '0');
+                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                var yyyy = today.getFullYear();
+                today = yyyy + '-' + mm + '-' + dd;
+                document.getElementById("day").setAttribute("max", today);
+            </script>
+
+            <input type="submit" value="Reģistrēties">
+
+        </form>
+    </div>
+</body>
+</html>

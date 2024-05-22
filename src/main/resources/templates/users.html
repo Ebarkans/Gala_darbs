@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Users</title>
+    <link rel="stylesheet" th:href="@{/css/users.css}">
+</head>
+<body>
+    <a class = "back-button" th:href="@{/mines}" id="mines-button">Back</a> <!-- Moved to top and added id -->
+
+    <div class="controls-container"> <!-- New div to contain sort buttons and search bar -->
+        <div class="sort-buttons"> <!-- Wrap sort buttons in a div -->
+            <form action="/users" method="get">
+                <button type="submit" name="sort" value="name" class="sort-button">Sort by Name</button>
+                <button type="submit" name="sort" value="role" class="sort-button">Sort by Role</button>
+            </form>
+        </div>
+
+        <div class = "search-container">
+            <form action="/users/search" method="get">
+                <input type="text" name="email" placeholder="Search by email">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+    </div> <!-- End of controls-container -->
+
+    <h1>Users</h1>
+    <div class= "user" th:each="user : ${users}">
+        <p th:text="${user.name}"></p>
+        <p th:text="${user.surname}"></p>
+        <p th:text="${user.email}"></p>
+        <p th:text="${user.password}"></p>
+        <p th:text="${user.day}"></p>
+        <p th:text="${user.role}"></p>
+    </div>
+</body>
+</html>

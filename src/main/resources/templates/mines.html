@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/Mines.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>puķe</title>
+</head>
+
+<body>
+    <div class="button-container">
+        <a href="/registration" class = "button" th:if="${session.student == null}">Registration</a>
+        <a href="/login" class = "button" th:if="${session.student == null}">Login</a>
+        <a href="/account" class = "button" th:if="${session.student != null}">Account</a>
+        <a href="/users" class="button" th:if="${session.student != null and session.student.email == 'ebarkans3@edu.riga.lv'}">Users</a>
+        <a class="game-board">
+    </div>
+    <h2 class="virsraksts23">Puķu laistīšanas sistēma</h2>
+</body>
+</html>

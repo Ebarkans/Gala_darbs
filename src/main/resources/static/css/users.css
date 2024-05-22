@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    position: relative; /* Add this to position the mines-button relative to the body */
+}
+
+h1 {
+    color: #333;
+}
+
+.user {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.user p {
+    margin: 0;
+}
+
+.sort-button {
+    background-color: #4CAF50; /* Button color */
+    color: white; /* Text color */
+    border: none;
+    padding: 15px 20px; /* Button size */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; /* Change this to inline-flex */
+    font-size: 16px;
+    margin: 15px 2px;
+    cursor: pointer;
+    border-radius: 4px; /* Rounded corners */
+    transition-duration: 0.4s; /* Transition effect */
+}
+
+.sort-button:hover {
+    background-color: #45a049; /* Darker green when hovered over */
+}
+
+#mines-button { /* Add this to position the mines-button */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.back-button{
+    background-color: #0056b3;
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px; /* Button size */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px; /* Rounded corners */
+    transition-duration: 0.4s; /* Transition effect */
+}
+
+.back-button:hover {
+    background-color: #004080;
+}
+
+.search-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+    padding-right: 50px;
+    margin-left: 10px;
+}
+
+.search-container input[type="text"] {
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-container button {
+    margin-left: 10px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background-color: #4CAF50;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-container button:hover {
+    background-color: #45a049;
+}
+
+.controls-container {
+    display: flex;
+    justify-content: flex-start;
+}
